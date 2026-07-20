@@ -6,17 +6,12 @@ Um acidente é considerado grave quando possui pelo menos uma pessoa morta ou fe
 
 ## Estrutura
 
-- `GUIA_APRESENTACAO_NOTEBOOK.md`: roteiro cronometrado e fala de apoio para cada célula;
-- `output/pdf/guia_apresentacao_notebook.pdf`: versão em PDF do guia de apresentação;
-- `relatorio/relatorio.tex`: manuscrito completo em LaTeX, com tabelas e figuras;
-- `projeto_prf_classificacao.ipynb`: notebook principal;
-- `projeto_prf_classificacao_executado.ipynb`: versão com resultados;
+- `projeto_prf_classificacao_executado.ipynb`: notebook principal, com código e resultados;
+- `relatorio/projeto.pdf`: relatório final do projeto;
 - `scripts/baixar_dados.py`: download reproduzível dos dados oficiais;
 - `src/prf_ml.py`: regras centrais de leitura, alvo, atributos e métricas;
 - `tests/`: testes contra vazamento e inconsistências de preparação;
 - `requirements.txt`: dependências;
-- `RELATORIO_BASE.md`: texto-base do relatório;
-- `ROTEIRO_VIDEO.md`: roteiro para vídeo de até cinco minutos;
 - `resultados/`: figuras e tabelas geradas.
 
 ## Fonte dos dados
@@ -48,7 +43,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 python scripts\baixar_dados.py
 python -m pytest
-jupyter lab projeto_prf_classificacao.ipynb
+jupyter lab projeto_prf_classificacao_executado.ipynb
 ```
 
 Depois, execute **Kernel > Restart Kernel and Run All Cells**.
@@ -56,7 +51,7 @@ Depois, execute **Kernel > Restart Kernel and Run All Cells**.
 Para executar sem interface:
 
 ```powershell
-jupyter nbconvert --to notebook --execute projeto_prf_classificacao.ipynb --output projeto_prf_classificacao_executado.ipynb --ExecutePreprocessor.timeout=1800
+jupyter nbconvert --to notebook --execute projeto_prf_classificacao_executado.ipynb --output projeto_prf_classificacao_reexecutado.ipynb --ExecutePreprocessor.timeout=1800
 ```
 
 ## Interpretação responsável
