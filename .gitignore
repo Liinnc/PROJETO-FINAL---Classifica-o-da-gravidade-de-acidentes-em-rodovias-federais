@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.jupyter_runtime/
+tmp/
+dados/raw/*.zip
+dados/processados/*.csv
+*.mp4
+output/
+GUIA_APRESENTACAO_NOTEBOOK.md
+ROTEIRO_VIDEO.md
+tools/gerar_guia_pdf.py
