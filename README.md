@@ -7,7 +7,7 @@ Um acidente é considerado grave quando possui pelo menos uma pessoa morta ou fe
 ## Estrutura
 
 - `projeto_prf_classificacao_executado.ipynb`: notebook principal, com código e resultados;
-- `relatorio/projeto.pdf`: relatório final do projeto;
+- `relatorio/Relatório_Anderson_Marden_Sousa_Silva.pdf`: relatório final do projeto;
 - `scripts/baixar_dados.py`: download reproduzível dos dados oficiais;
 - `src/prf_ml.py`: regras centrais de leitura, alvo, atributos e métricas;
 - `tests/`: testes contra vazamento e inconsistências de preparação;
@@ -62,17 +62,17 @@ O banco contém apenas acidentes registrados, não todos os veículos que circul
 
 O HistGradientBoosting foi selecionado usando exclusivamente a validação de 2024. No teste de 2025, com 72.529 ocorrências, foram obtidos:
 
-- PR-AUC: 0,525, contra prevalência/baseline de 0,283;
+- PR-AUC: 0,524, contra prevalência/baseline de 0,283;
 - IC95% da PR-AUC: 0,517 a 0,532;
-- ROC-AUC: 0,710;
+- ROC-AUC: 0,711;
 - Brier score calibrado: 0,176, contra 0,203 do baseline;
-- precisão: 41,4%;
-- recall: 65,6%;
-- F1: 0,507;
-- balanced accuracy: 64,5%.
+- precisão: 41,9%;
+- recall: 64,5%;
+- F1: 0,508;
+- balanced accuracy: 64,6%.
 
-Ao priorizar somente as 20% ocorrências com maior probabilidade, o modelo concentrou 38,9% dos acidentes graves. A precisão desse grupo foi 54,9%, equivalente a um lift de 1,94 em relação à prevalência de 2025.
+Ao priorizar somente as 20% ocorrências com maior probabilidade, o modelo concentrou 39,0% dos acidentes graves. A precisão desse grupo foi 55,1%, equivalente a um lift de 1,95 em relação à prevalência de 2025.
 
 O tipo do acidente foi a variável com maior importância por permutação, seguido por quantidade de veículos, BR, UF e traçado da via. Isso é compatível com a aplicação após a comunicação inicial e limita o uso preventivo do modelo.
 
-No estudo de ablação, a retirada de `tipo_acidente` e `veiculos` reduziu a PR-AUC para 0,395, uma queda de 24,6%. Portanto, a documentação não apresenta o modelo completo como ferramenta preventiva anterior à ocorrência.
+No estudo de ablação, a retirada de `tipo_acidente` e `veiculos` reduziu a PR-AUC para 0,396, uma queda de 24,4%. Portanto, a documentação não apresenta o modelo completo como ferramenta preventiva anterior à ocorrência.
